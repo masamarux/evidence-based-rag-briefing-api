@@ -4,6 +4,7 @@ from app.core.config import settings
 from app.api.routes.health import router as health_router
 from app.api.routes.cases import router as cases_router
 from app.api.routes.sources import router as sources_router
+from app.api.routes.ask import router as ask_router
 
 
 app = FastAPI(
@@ -14,6 +15,7 @@ app = FastAPI(
 app.include_router(health_router)
 app.include_router(cases_router)
 app.include_router(sources_router)
+app.include_router(ask_router)
 
 @app.get("/")
 def root():
